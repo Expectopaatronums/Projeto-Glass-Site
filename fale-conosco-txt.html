@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Projeto glass</title>
+
+    <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('idQtd').value);
+            tot = qtd * 1099;
+            document.getElementById('idPreco').value = tot;
+        }
+    </script>
+</head>
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+            <hgroup">
+            <h4 style="color: #3b3599;">Google <font color="red">Glass</font></h4>
+                <h6 style="color: #48ae2f;">A revolução do <h7>Google</h7> está chegando</h6>
+                <img class="icone" src="_imagens/contato.png" width="200;">
+                <div class="glow-wrap">
+                    <i class="glow"></i>
+                    </hgroup>
+        </header>
+        <nav id="menu">
+            <h2>Menu Principal</h2>
+        <div  class="corr">
+            <ul id="test">
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a
+                        href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                    <a href="specs-txt.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a
+                        href="fotos-txt.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a
+                        href="multimidia-txt.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a
+                        href="fale-conosco-txt.html">Fale conosco</a></li>
+            </ul>
+        </div>
+        </nav>
+        <section id="corpo"></section>
+        <article id="noticia"> </article>
+        <header id="cabecalho-artigo">
+            <hgroup>
+                <h3>Fale Conosco > Contato</h3>
+                <h1>Formulário de Contato</h1>
+            </hgroup>
+        </header>
+       <div id="dirr">
+        <h3 >Atualizado em 01/Maio/2022</h3>
+       </div>
+        <form method="post" id="fContato" action="mailto:contato@cursoemvideo.com" oninput="calc_total();">
+
+            <fieldset id="usuario">
+                <legend>Identificação do Usuário</legend>
+                <p><label for="cNome">Nome:</label><input type="text" name="tNome" id="cNome" size="20" maxlength="30"
+                        placeholder="Nome Completo" /></p>
+                <p><label for="cSenha">Senha: </label><input type="password" name="tSenha" id="cSenha" size="12"
+                        maxlength="12" placeholder="Digite Senha" /></p>
+                <p><label FOR="cMail">E-mail:</label><input type="email" name="tMail" id="cMail" size="50"
+                        maxlenght="51" placeholder="Digite E-mail"></p>
+                <fieldset id="sexo">
+                    <legend>Sexo:</legend>
+                    <input type="radio" name="tSexo" id="cMasc" checked /> <label for="cMasc">Masculino</label><br />
+                    <input type="radio" name="tSexo" id="cFem" /><label for="cFem">Feminino</label>
+                </fieldset>
+                <p><label for="cNasc">Data de Nascimento:</label><input type="date" name="tNasc" id="cNasc"></p>
+            </fieldset>
+
+            <fieldset id="endereco">
+                <legend><font color="Turquoise">Endereço do Usuário</font></legend>
+                <p><label for="cRua">Logradouro</label> <input type="text" name="tRua" id="cRua" size="13"
+                        maxlenght="80" placeholder="Rua, Av, Bairro, ..." /></p>
+                <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="999"
+                        size="20" maxlenght="30" placeholder="Número Telefone" /></p>
+                <p><label for="cEst">Estado:</label><select name="tEst" id="cEst">
+                        <optgroup label="Região Sudeste">
+                            <option VALUE="RJ">Rio de Janeiro </option>
+                            <option VALUE="SP">São Paulo</option>
+                            <option VALUE="MG">Minas Gerais</option>
+                        </optgroup>
+                        <optgroup label="Região Sul">
+                            <option VALUE="PR">Paraná</option>
+                            <option VALUE="RS">Rio Grande do Sul</option>
+                        </optgroup>
+                        <optgroup label="Região Norte">
+                            <option VALUE="RO" selected>Rondônia</option>
+                            <option VALUE="AM">Amazonas</option>
+                            <option VALUE="AC">Acre</option>
+                            <option VALUE="TO">Tocantins</option>
+                        </optgroup>
+                        <optgroup label="Região Nordeste">
+                            <option VALUE="BA">Bahia</option>
+                            <option VALUE="PI">Piauí</option>
+                        </optgroup>
+                        <optgroup label="Região Centro-Oeste">
+                            <option VALUE="MT">Mato Grosso</option>
+                            <option VALUE="DF">Distrito Federal</option>
+                        </optgroup>
+                    </select>
+                </p>
+                <p><label for="cCid">Cidade:</label>
+                <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua cidade" list="cidade"></p>
+                <datalist id="cidade">
+                    <option value="Rio de Janeiro"></option>
+                    <option value="Nova Iguaçu"></option><option value="Niterói"></option>
+                    <option value="Belford Roxo"></option></datalist>
+            </fieldset>
+
+            <fieldset id="mensagem">
+                <legend><font color="#836FFF">Mensagem do Usuário</font></legend>
+                <p><label for="cGrau">Grau de Urgência:</label>
+                    &nbsp   Min<input type="range" name="tUrg" id="cGrau" min="0" max="10" step="2"/>Máx</p>
+                <p><label for="cMsg">Mensagem:</label><textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem!!!"></textarea></p>
+            </fieldset>
+            <fieldset id="pedido">
+                <legend>Quero um Google Glass</legend>
+                <p><input type="checkbox" name="adquirir" id="idAdquirir">
+                    <label for="idAdquirir">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                <p><label for="idCor">Cor: </label>
+                    <input type="color" name="cor" id="idCor"></p>
+                <p><label for="idQtd">Quantidade: </label>
+                    <input type="number" name="qtd" id="idQtd" min="1" max="10" value="0"></p>
+                <p><label for="idPreco">Preço Total: R$</label>
+                    <input type="text" name="preco" id="idPreco" placeholder=" Total a pagar" readonly></p>
+            </fieldset>
+          <div class="BotaoEnviar">
+            <input  type="image" name="tBot" src="_imagens/botao-enviar-md.jpg">
+         </div>
+
+        </form>
+        <footer id="rodape">
+            <p>Copyright &copy; 2022 - by Gustavo Guanabara<br>
+                <a href="https://www.facebook.com/CursosEmVideo/" target="_blank">Facebook</a>|<a
+                    href="https://twitter.com/cursosemvideo" target="_blank">Twitter</a>
+            </P>
+        </footer>
+    </div>
+</body>
+
+</html>
+</body>
+
+</html>
